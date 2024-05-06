@@ -94,6 +94,12 @@ function pedirJugada() {
   // 4- Finalmente, si el resultado fue una derrota debe mostrarle al usuario un mensaje de aliento para desearle suerte en la próxima oportunidad.
   
   function mostrarResultado(resultado){
-    
+    console.log(resultado);
+    if (resultado == 'Una lástima, perdiste.'){
+        alert(resultado + "\nSigue participando, suerte para la próxima.");
+    }
+    else{
+        alert(resultado);
+    }
   }
   
