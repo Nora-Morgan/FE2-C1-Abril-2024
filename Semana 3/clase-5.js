@@ -82,7 +82,7 @@ function obtenerUsuario() {
     // No se visualiza hasta asignarlo a un elemento existente del DOM
     //👇
     nombreUsuario.append (nuevoNodo);
-    console.log(nuevoNodo); // habían solicitado ver qué arrojaba
+    // console.log(nuevoNodo); // habían solicitado ver qué arrojaba
 
     // nombreUsuario.append(document.createTextNode(usuario));
 
@@ -286,8 +286,8 @@ function mostrarDatosEnPerfil(albumes) {
         }
     })
 
-    console.log(contadorAlbum);
-    console.log(contadorFavoritos);
+    // console.log(contadorAlbum);
+    // console.log(contadorFavoritos);
 
 
     if (contadorAlbum == 1) {
