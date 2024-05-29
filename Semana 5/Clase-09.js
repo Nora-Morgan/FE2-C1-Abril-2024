@@ -153,4 +153,24 @@ formulario.addEventListener('submit', function (evento) {
 //     el botón de "Atrás"(la flechita del navegador) el usuario vuelva a index.
 
 function navegarPaginaExito() {
+    // modificación del botón
+    const btn = document.querySelector("button");
+    btn.setAttribute("disabled", true);
+    btn.textContent = "Cargando...";
+
+    // almacenar en localStorage los datos del usuario
+    // como no es un string, sino un objeto más complejo, se debe convertir a JSON
+    // las claves y los valores serán siempre cadenas de texto
+    localStorage.setItem("user", JSON.stringify(estadoUsuario));
+
+    // que se ejecute la acción una vez superado el tiempo especificado
+    setTimeout(() => {
+        // objeto location: atributos y métodos para manipular información
+        // que viaja en la barra de direcciones (href, asign, replace)
+        location.replace('./usuario.html');
+    }, 3000);
 }
+
+// window.localStorage: los datos almacenados no tienen expiración
+// window.sessionStorage: permite acceder a un objeto storage asociado a la sesión actual
+// y es eliminada cuando se cierra el navegador (cuando se cierra la sesión de navegación)
