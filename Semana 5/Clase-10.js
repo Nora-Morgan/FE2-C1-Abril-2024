@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
     const user = recuperarDataDelStorage();
     renderizarElementos(user);
 
-    // botonCerrarSesion();
+    botonCerrarSesion();
 
  })
 
@@ -83,4 +83,21 @@ function renderizarElementos(objetoJS) {
 function botonCerrarSesion() { 
 //    👇 desarrollar la función aquí
 
+}
+
+function botonCerrarSesion(){
+    const tarjeta = document.querySelector('.user');
+    
+    const boton = document.createElement('button');
+    boton.style = "padding: 5px 20px; background-color: rgba(255,0,0,0.2); color: red; margin: 20px; border: none; cursor: pointer;";
+    boton.textContent = "Cerrar sesión";
+    
+    tarjeta.appendChild(boton);
+    
+    boton.addEventListener('click', ()=>{
+    if(confirm("¿Seguro desea cerrar sesión?")){
+        location.replace('./');
+        localStorage.clear();
+    }
+    })
 }
