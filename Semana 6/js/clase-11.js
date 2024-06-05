@@ -3,18 +3,18 @@
  */
 
 // Sincronismo
-let nombre = "Pepe Milanesa";
-let saludo = `Hola, mi nombre es ${nombre}!`;
-console.log(saludo);
+// let nombre = "Pepe Milanesa";
+// let saludo = `Hola, mi nombre es ${nombre}!`;
+// console.log(saludo);
 
-nombre = "Pepe Milanesa";
-saludo = saludar(nombre);
-console.log(saludo);
+// nombre = "Pepe Milanesa";
+// saludo = saludar(nombre);
+// console.log(saludo);
 
 
-function saludar(name) {
-    return `Hola, mi nombre es ${name}! Te saludo desde una función`;
-}
+// function saludar(name) {
+//     return `Hola, mi nombre es ${name}! Te saludo desde una función`;
+// }
 
 /* ---------------------------------------------------------------------*/
 // ¿Qué pasa cuando lo que debe procesar la función implica una demora?
@@ -131,13 +131,13 @@ boton.addEventListener("click", () => {
         .then((resultado => {
             console.log(resultado);
             renderizarElementos(resultado);
-            // la ruta es la correcta, entonces debería pasar por el then con el resultado esperado
+            // la ruta es la correcta, por ello entró en el then con el resultado esperado
             // (el listado para iterar)
         }))
         .catch( (error) => {
             console.log(error);
             console.log(error.message);
-            // como el endpoint está mal se debería rechazar la promesa
+            // si el endpoint está mal se debería rechazar la promesa
             // y capturar con el catch para ver el error
         })
 
@@ -165,6 +165,14 @@ function consultaAsincrona(ruta) {
      })
 }
 
+
+// Una promesa es un objeto que representa el resultado de una operación asíncrona.
+
+// La función pasada a new Promise se llama ejecutor.
+// Cuando se crea new Promise, el ejecutor corre automáticamente.
+// Este contiene el código productor que a la larga debería producir el resultado.
+// El ejecutor corre e intenta realizar una tarea.
+// Cuando termina con el intento, llama a resolve si fue exitoso o reject si hubo un error.
 // Una promesa es un simple texto provisional para una tarea asincrónica que aún no se ha completado.
 // Al definir una promesa en el script, en vez de devolver un valor inmediatamente,
 // esta devuelve una promesa.
@@ -194,10 +202,10 @@ function consultaAsincrona(ruta) {
 function renderizarElementos(listado) {
 
     // desarrollar la funcion 👇
-    // console.log(listado);
-    // const comentarios = document.querySelector(".comentarios");
+    console.log(listado);
+    const comentarios = document.querySelector(".comentarios");
 
-    /* Renderizado con  con foreach 
+    //Renderizado con foreach 
     comentarios.innerHTML = ""
     listado.forEach(comentario => {
         comentarios.innerHTML += `
@@ -207,7 +215,7 @@ function renderizarElementos(listado) {
             </div>
         `
     });
-    */
+    
    
     /* Renderizando con el método map */
     // comentarios.innerHTML = listado.map( comentario => {
