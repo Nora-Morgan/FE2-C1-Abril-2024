@@ -113,3 +113,35 @@ function renderizarElementos(listado) {
 
 // 4- Solo deben cargarse los primeros 10 comentarios que nos llegan.
 
+
+
+async function consultaApi(endpoint) {
+    // La estructura try...catch permite capturar y manejar errores
+    // que puedan ocurrir durante la ejecución del código en el bloque try
+  try {
+    // await hace que la función espere hasta que la solicitud se complete y se obtenga una respuesta
+    const res = await fetch(endpoint);
+    if (!res.ok) {
+      throw new Error("No se pudo cargar los comentarios");
+    }
+    const data = await res.json();
+    renderizarElementos(data.slice(0, 10));
+    boton.style.display = "none";
+  } catch (error) {
+        console.error(error.message);
+        alert("Ocurrió un error al cargar los comentarios.");
+  }
+}
+
+/*
+Cuando se llama a una función async, esta devuelve un elemento Promise.
+- Cuando la función async devuelve un valor
+        Promise se resolverá con el valor devuelto.
+- Si la función async genera una excepción
+        Promise se rechazará con el valor generado.
+
+Una función async puede contener una expresión await,
+la cual pausa la ejecución de la función asíncrona
+- espera la resolución de la Promise pasada
+- reanuda la ejecución de la función async y devuelve el valor resuelto
+*/
