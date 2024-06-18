@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo App</title>
+  <link rel="icon" type="image/x-icon" href="./assets/DH_Logo_Black.png">
+  <meta name="description" content="Digital House CTD | Proyecto integrador | FRONTEND II" />
+
+  <!-- ----------------------------- estilos CSS ----------------------------- -->
+  <link rel="stylesheet" href="./css/tasksStyles.css">
+
+  <!-- ------------------- libreria de iconos Fontawesome -------------------- -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Libreria SweetAlert -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+  <!-- Sweet alert Version Dark mode -->
+  <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+  <!-- Librería Animate On Scrol  -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- logica de la página -->
+  <script src="./scripts/taks.js"></script>
+  <script src="./scripts/utils.js"></script>
+
+</head>
+
+<body>
+
+  <!-- cabecera con barra de navegación -->
+  <header class="container">
+    <nav>
+      <h1>To-Do App</h1>
+
+      <div class="user-info">
+        <p>username</p>
+        <div class="user-image"></div>
+        <button id="closeApp"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- carga de tareas -->
+    <form class="nueva-tarea">
+      <input id="nuevaTarea" type="text" placeholder="nueva tarea">
+      <button type="submit"><i class="fa-solid fa-pencil"></i> Crear tarea</button>
+    </form>
+
+    <!-- contenedor vacío para las que pasen a pendientes -->
+    <ul class="tareas-pendientes">
+      <li class="tarea">
+        <button class="change" id="01"><i class="fa-regular fa-circle"></i></button>
+        <div class="descripcion">
+          <p class="nombre">Mi tarea</p>
+          <p class="timestamp">01-09-2023</p>
+        </div>
+      </li>
+    </ul>
+
+    <h2>Tareas finalizadas <span id="cantidad-finalizadas">0</span></h2>
+    
+    <!-- contenedor vacío para las que pasen a terminadas -->
+    <ul class="tareas-terminadas">
+      <li class="tarea">
+        <div class="hecha">
+          <i class="fa-regular fa-circle-check"></i>
+        </div>
+        <div class="descripcion">
+          <p class="nombre">Otra tarea</p>
+          <div class="cambios-estados">
+            <button class="change incompleta" id="002"><i class="fa-solid fa-rotate-left"></i></button>
+            <button class="borrar" id="002"><i class="fa-regular fa-trash-can"></i></button>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+  </main>
+
+
+  <footer>
+    <img src="./assets/DH_Logo_White.png" alt="">
+    <p>| Frontend II Team ♥</p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo App</title>
+  <link rel="icon" type="image/x-icon" href="./assets/DH_Logo_Black.png">
+  <meta name="description" content="Digital House CTD | Proyecto integrador | FRONTEND II"/>
+
+
+  <!-- ---------------- estilos compartidos de login y signup ---------------- -->
+  <link rel="stylesheet" href="./css/loginSignupStyles.css">
+
+
+  <!-- ---------------------- logica aplicada en login ----------------------- -->
+  <script src="./scripts/utils.js"></script>
+  <script src="./scripts/login.js"></script>
+
+</head>
+
+<body>
+
+  <header class="container">
+    <nav>
+      <h1>To-Do App</h1>
+      <img src="./assets/DigitalHouse_Logo_White.png" alt="logo DH">
+    </nav>
+  </header>
+
+  <div class="container">
+    <form>
+      <div class="form-header">
+        <h2>To-Do App</h2>
+        <p class="rounded">Login</p>
+      </div>
+
+      <!-- <label for="inputEmail">
+        Email
+        <input id="inputEmail" type="text" name="correo electrónico">
+      </label> -->
+      <label for="inputEmail">Email</label>
+      <input id="inputEmail" type="text" name="correo electrónico">
+      <span></span>
+      
+      <label for="inputPassword">Contraseña</label>
+      <input id="inputPassword" type="password" name="contraseña">
+      <span></span>
+      
+      <button type="submit">Ingresar</button>
+
+    </form>
+
+    <div class="ingresarA">
+      <a href="signup.html">¿No tienes una cuenta? Regístrate aquí</a>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
